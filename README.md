@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/mina-hipchat.svg)](http://badge.fury.io/rb/mina-hipchat)
+
 # Mina::Hipchat
 
 Mina-Hipchat is a small gem for sending mina deploy notifications to HipChat.
@@ -20,14 +22,14 @@ Or install it yourself as:
 
 ## Usage example
 
-    
+
     require ‚mina/hipchat‘
     …
-    
+
     # Required data
     set :hipchat_room, 'room_1' # roomname or id
     set :hipchat_token, 'xxx' # auth token
-    
+
     # Optional Data
     set :hipchat_application, 'My Cool App' # application  name
     set :h_color, 'red' # color
