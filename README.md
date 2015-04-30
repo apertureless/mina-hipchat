@@ -21,31 +21,33 @@ Or install it yourself as:
     $ gem install mina-hipchat
 
 ## Usage example
-```ruby
-require ‚mina/hipchat‘
-…
- # Required data
-set :hipchat_room, „room_1“ # roomname or id
-set :hipchat_token, „xxx“ # auth token
- # Optional Data
-set :hipchat_application, „My Cool App“ # application name
-set :h_color, ‚red‘ # color
 
-....
+    
+    require ‚mina/hipchat‘
+    …
+    
+    # Required data
+    set :hipchat_room, 'room_1' # roomname or id
+    set :hipchat_token, 'xxx' # auth token
+    
+    # Optional Data
+    set :hipchat_application, 'My Cool App' # application  name
+    set :h_color, 'red' # color
 
-task :deploy do
-  deploy do
-    invoke :'hipchat:starting_deploy’'
-    ...
+    ....
 
-    to :launch do
-      ...
-      invoke :'hipchat:finished_deploy’'
+    task :deploy do
+      deploy do
+        invoke :'hipchat:starting_deploy’'
+        ...
+
+        to :launch do
+          ...
+          invoke :'hipchat:finished_deploy’'
+        end
+      end
     end
-  end
-end
 
-```
 
 
 
