@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Mina deploy notification for HipChat.}
   spec.description   = %q{Sending room notification in HipChat for Mina}
-  spec.homepage      = "http://www.apertureless.de"
+  spec.homepage      = "https://github.com/apertureless/mina-hipchat"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
