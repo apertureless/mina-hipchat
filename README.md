@@ -1,6 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/mina-hipchat.svg)](http://badge.fury.io/rb/mina-hipchat)
-
-# Mina::Hipchat
+# Mina::Hipchat [![Gem Version](https://badge.fury.io/rb/mina-hipchat.svg)](http://badge.fury.io/rb/mina-hipchat)
 
 Mina-Hipchat is a small gem for sending mina deploy notifications to HipChat.
 
@@ -65,7 +63,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/mina-hipchat/fork )
+1. Fork it ( https://github.com/apertureless/mina-hipchat/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
