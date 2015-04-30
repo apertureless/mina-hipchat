@@ -26,9 +26,9 @@ namespace :hipchat do
 			start_time = fetch(:start_time)
 			elapsed = end_time.to_i - start_time.to_i
 
-		      end_msg = "#{deployer} successfully deployed #{announced_application_name} in #{elapsed} seconds."
-		      post_hipchat_message(end_msg);
-	      else
+		 	end_msg = "#{deployer} successfully deployed #{announced_application_name} in #{elapsed} seconds."
+			post_hipchat_message(end_msg);
+		else
 			print_local_status "Unable to send notification, no HipChat details provided."
 		end
 
@@ -56,10 +56,10 @@ namespace :hipchat do
 		request = Net::HTTP::Post.new(uri.request_uri, {'Content-Type' => 'application/json'})
 
 		request.body = {
-		    "notify"          => true,
-		    "message_format"  => "text",
-		    "message"         => h_msg,
-		    "color"	=> h_color
+			"notify"          => true,
+			"message_format"  => "text",
+			"message"         => h_msg,
+			"color"	=> h_color
 		}.to_json
 
 		response = http.request(request)
