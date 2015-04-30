@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jakub Juszczak"]
   spec.email         = ["juszczak.j@googlemail.com"]
 
-  spec.summary       = %q{Mina deploy hipchat gem.}
-  spec.description   = %q{Sending mina deploy messages to a hipchat room}
+  spec.summary       = %q{Mina deploy notification for HipChat.}
+  spec.description   = %q{Sending room notification in HipChat for Mina}
   spec.homepage      = "http://www.apertureless.de"
   spec.license       = "MIT"
 
