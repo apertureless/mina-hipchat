@@ -1,17 +1,16 @@
-require 'mina/hooks'
 require 'json'
 require 'net/http'
 require 'uri'
 
-
 namespace :hipchat do
 
-	task :starting do
+	desc "Starting deploy notification"
+	task :starting_deploy do
 		if hipchat_token and hipchat_room
-			starting_msg = "#{deployer} is deploying now #{announced_application_name}"
+			h_msg = "#{deployer} is deploying now: #{announced_application_name} "
 
 			# Post starting message
-			post_hipchat_message(starting_msg)
+			post_hipchat_message(h_msg)
 
 			# Start time tracking
 			set(:start_time, Time.now)
@@ -20,9 +19,8 @@ namespace :hipchat do
 		end
 	end
 
-	task :finished do
+	task :finished_deploy do
 		if hipchat_token and hipchat_room
-
 			# End time tracking and calculate elapsed time
 			end_time = Time.now
 			start_time = fetch(:start_time)
@@ -48,25 +46,23 @@ namespace :hipchat do
 		end
 	end
 
-	def post_hipchat_message(message)
+	def post_hipchat_message(h_msg)
 		# Parse the URI and handle the https connection
-		uri = URI.parse("https://api.hipchat.com/v2/room/#{room_id}/notification?auth_token=#{hipchat_token}")
+		uri = URI.parse("https://api.hipchat.com/v2/room/#{hipchat_room}/notification?auth_token=#{hipchat_token}")
 		http = Net::HTTP.new(uri.host, uri.port)
-
-		payload = {
-			"id_or_roomname" 	=> hipchat_room,
-			"color"   	 			=> color,
-			"message"  			=> message,
-			"notify"  				=> notify,
-			"message_format"		=> msg_format
-		}
+		http.use_ssl = true
 
 		# Create the post request and setup the form data
-		request = Net::HTTP::Post.new(uri.request_uri)
-		request.set_form_data(:payload => payload.to_json)
+		request = Net::HTTP::Post.new(uri.request_uri, {'Content-Type' => 'application/json'})
 
-		# Make the actual request to the API
-		http.request(request)
+		request.body = {
+		    "notify"          => true,
+		    "message_format"  => "text",
+		    "message"         => h_msg,
+		    "color"	=> h_color
+		}.to_json
+
+		response = http.request(request)
 	end
 
 end
