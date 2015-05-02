@@ -1,5 +1,6 @@
-# Mina::Hipchat [![Gem Version](https://badge.fury.io/rb/mina-hipchat.svg)](http://badge.fury.io/rb/mina-hipchat)
+[![Gem Version](https://badge.fury.io/rb/mina-hipchat.svg)](http://badge.fury.io/rb/mina-hipchat) [![Build Status](https://travis-ci.org/apertureless/mina-hipchat.svg?branch=master)](https://travis-ci.org/apertureless/mina-hipchat) [![Dependency Status](https://gemnasium.com/apertureless/mina-hipchat.svg)](https://gemnasium.com/apertureless/mina-hipchat)
 
+# Mina-Hipchat
 Mina-Hipchat is a small gem for sending mina deploy notifications to HipChat.
 
 ## Installation
