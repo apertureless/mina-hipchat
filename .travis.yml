@@ -3,3 +3,7 @@ language: ruby
 before_install:
   - gem update --system
   - gem --version
+
+  install:
+  - gem uninstall bundler
+  - gem install bundler --version '1.9'
