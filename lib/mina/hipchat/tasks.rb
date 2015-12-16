@@ -46,23 +46,10 @@ namespace :hipchat do
 		end
 	end
 
-	def post_hipchat_message(h_msg)
+	def post_hipchat_message(msg)
 		# Parse the URI and handle the https connection
-		uri = URI.parse("https://api.hipchat.com/v2/room/#{hipchat_room}/notification?auth_token=#{hipchat_token}")
-		http = Net::HTTP.new(uri.host, uri.port)
-		http.use_ssl = true
-
-		# Create the post request and setup the form data
-		request = Net::HTTP::Post.new(uri.request_uri, {'Content-Type' => 'application/json'})
-
-		request.body = {
-			"notify"          => true,
-			"message_format"  => "text",
-			"message"         => h_msg,
-			"color"	=> h_color
-		}.to_json
-
-		response = http.request(request)
+		client = HipChat::Client.new(hipchat_token, :api_version => 'v2')
+		client[hipchat_room].send('mina', msg, :color => h_color)
 	end
 
 end
