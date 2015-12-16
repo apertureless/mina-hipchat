@@ -32,7 +32,8 @@ It is more save to use the room id instead of the room name. This way it works e
 
     # Optional Data
     set :hipchat_application, 'My Cool App' # application  name
-    set :h_color, 'red' # color
+    set :hipchat_color, 'red' # Color it red. or "yellow", "green", "purple", "random" (default "yellow")
+    set :hipchat_notify, true # Send notifications to users (default false)
 
     ....
 

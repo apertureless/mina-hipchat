@@ -46,8 +46,8 @@ namespace :hipchat do
 
 	def post_hipchat_message(msg)
 		# Parse the URI and handle the https connection
-		client = HipChat::Client.new(hipchat_token, :api_version => 'v2')
-		client[hipchat_room].send('mina', msg, :color => h_color)
+		client = HipChat::Client.new(hipchat_token, :api_version => 'v2', :notify => hipchat_notify)
+		client[hipchat_room].send('mina', msg, :color => hipchat_color)
 	end
 
 end
