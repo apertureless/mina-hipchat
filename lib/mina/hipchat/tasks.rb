@@ -5,10 +5,10 @@ namespace :hipchat do
 	desc "Starting deploy notification"
 	task :starting_deploy do
 		if hipchat_token and hipchat_room
-			h_msg = "#{deployer} is deploying now: #{announced_application_name} "
+			hipchat_msg = "#{deployer} is deploying now: #{announced_application_name} "
 
 			# Post starting message
-			post_hipchat_message(h_msg)
+			post_hipchat_message(hipchat_msg)
 
 			# Start time tracking
 			set(:start_time, Time.now)
@@ -45,7 +45,7 @@ namespace :hipchat do
 	end
 
 	def post_hipchat_message(msg)
-		# Parse the URI and handle the https connection
+		# Send message via official library
 		client = HipChat::Client.new(hipchat_token, :api_version => 'v2', :notify => hipchat_notify)
 		client[hipchat_room].send('mina', msg, :color => hipchat_color)
 	end
