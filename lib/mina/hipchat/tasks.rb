@@ -1,6 +1,4 @@
-require 'json'
-require 'net/http'
-require 'uri'
+require 'hipchat'
 
 namespace :hipchat do
 
