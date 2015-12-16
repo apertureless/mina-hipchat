@@ -53,8 +53,8 @@ It is more save to use the room id instead of the room name. This way it works e
 
 ## Available tasks
 
-- ```invoke :'hipchat:starting_deploy’```
-- ```invoke :'hipchat:finished_deploy’```
+- ```invoke :'hipchat:starting_deploy'```
+- ```invoke :'hipchat:finished_deploy'```
 
 
 ## Development
