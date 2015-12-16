@@ -21,8 +21,9 @@ Or install it yourself as:
 
 ## Usage example
 
+It is more save to use the room id instead of the room name. This way it works even if you're room name have spaces in it.
 
-    require ‚mina/hipchat‘
+    require 'mina/hipchat'
     …
 
     # Required data
@@ -37,12 +38,12 @@ Or install it yourself as:
 
     task :deploy do
       deploy do
-        invoke :'hipchat:starting_deploy’'
+        invoke :'hipchat:starting_deploy'
         ...
 
         to :launch do
           ...
-          invoke :'hipchat:finished_deploy’'
+          invoke :'hipchat:finished_deploy'
         end
       end
     end
