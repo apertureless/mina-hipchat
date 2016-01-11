@@ -35,20 +35,6 @@ It is more save to use the room id instead of the room name. This way it works e
     set :hipchat_color, 'red' # Color it red. or "yellow", "green", "purple", "random" (default "yellow")
     set :hipchat_notify, true # Send notifications to users (default false)
 
-    ....
-
-    task :deploy do
-      deploy do
-        invoke :'hipchat:starting_deploy'
-        ...
-
-        to :launch do
-          ...
-          invoke :'hipchat:finished_deploy'
-        end
-      end
-    end
-
 
 
 
