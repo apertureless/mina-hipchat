@@ -1,4 +1,9 @@
 require 'hipchat'
+require 'mina/hooks'
+
+# Before and after hooks for mina deploy
+before_mina :deploy, :'hipchat:starting_deploy'
+after_mina :deploy, :'hipchat:finished_deploy'
 
 namespace :hipchat do
 
